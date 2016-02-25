@@ -11,21 +11,17 @@ apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E8
 # Add Docker's apt repo to apt-mirror's mirror list
 echo deb https://apt.dockerproject.org/repo ubuntu-trusty main > /etc/apt/mirror.list
 
-# return to user privileges
-exit
-
-# Create target directory for Docker repo that will be downloaded
-mkdir docker_pkgs
-cd docker_pkgs/
-
-# Save Docker's public key to current directory
-apt-key export 58118E89F3A912897C070ADBF76221572C52609D > docker.key
-
 # Run apt-mirror to download Docker repo to current directory
 apt-mirror
 
-cd ..
+# Save Docker's public key to the mirror directory
+apt-key export 58118E89F3A912897C070ADBF76221572C52609D > /var/spool/apt-mirror/mirror/apt.dockerproject.org/docker.key
 
-# Compress the dir to an archive file
-tar -cvvzf docker_pkgs.tar.gz docker_pkgs/
+# Return to user
+exit
+
+cd ~
+
+# Compress the mirror dir to an archive file in the current directory
+tar -cvzf docker_mirror.tar.gz -C /var/spool/apt-mirror/mirror apt.dockerproject.org
 
