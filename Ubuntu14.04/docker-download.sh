@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # Run the follwing command with su privileges
 sudo -i
 
