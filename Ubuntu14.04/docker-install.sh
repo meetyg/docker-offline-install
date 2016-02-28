@@ -4,10 +4,10 @@
 mkdir -p /var/deb/apt-mirror
 
 # Extract mirrored repository
-tar -xvzf docker_mirror.tar.gz /var/deb/apt-mirror/
+tar -xvzf docker_mirror.tar.gz -C /var/deb/apt-mirror/
 
 # Add local Docker mirror to apt-get sources list
-echo 'deb [arch=arm64] file:///var/deb/apt-mirror/apt.dockerproject.org/repo  ubuntu-trusty main' > /etc/apt/source.list.d/docker_local.list
+echo 'deb [arch=arm64] file:///var/deb/apt-mirror/apt.dockerproject.org/repo  ubuntu-trusty main' > /etc/apt/sources.list.d/docker_local.list
 
 # Add the Docker public key to apt-get so that it can verify the package signitures
 apt-key add /var/deb/apt-mirror/apt.dockerproject.org/docker.key
