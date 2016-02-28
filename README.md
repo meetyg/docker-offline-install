@@ -33,7 +33,7 @@ Please check the console output for any warnings/errors that may occur during th
    `cd Ubuntu14.04`
 4. Run the download script with sudo: `sudo docker-download.sh`
 5. If all goes well, there should be gzip file named *docker_mirror.tar.gz* in the directory you ran the script from.
-   Copy this file, **and** at the *docker-install.sh* script to your media (i.e. cdrom, usb etc...)
+   Copy this file, **and** the *docker-install.sh* script to your media (i.e. cdrom, usb etc...)
 
 ### On the target (offline) computer:
 1. Copy the *docker_mirror.tar.gz* and the *docker-install.sh* from the media to a writeable directory on the target.
