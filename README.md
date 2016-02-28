@@ -5,7 +5,7 @@ This is usefull for installing Docker engine on servers that don't or cannot hav
 Usually you would install Docker using apt-get, but that of course requires the server to be connected to the internet.
 One solution is to mirror the entire Ubuntu [apt] repository, but because of its size, this solution is not practical.
 
-Thankfully, Docker manages there own [apt] repository for the Docker-Engine, including direct dependencies.
+Thankfully, Docker manages there own [apt] repository for the Docker-Engine, including direct dependencies (see prerequisites).
 Using a seperate internet connected (online) computer, you can download the Docker [apt] repository, copy it using some media (i.e. cdrom, usb) to the target computer / server and install it using apt-get.
 
 The included scipts utilize [**apt-mirror**](http://apt-mirror.github.com) for downloading the Docker [apt] repository.
@@ -14,6 +14,9 @@ The official Docker documentation for [installing Docker on Ubuntu](https://docs
 Currently only Ubuntu 14.04 is supported on both *source* (online) and *target* (offline) computers.
 
 ## Prerequisites:
+* Check Docker's [dependencies](https://docs.docker.com/engine/installation/binaries/#check-runtime-dependencies)
+  to make sure you have the basic dependencies installed on the target computer (i.e. iptables, apparmor).
+  These are usually allready installed in typical Ubuntu 14.04 installations, but may be missing in some cases.
 * An online computer running Ubuntu 14.04 64-bit (a.k.a *source*)
 * An offline / standalone computer running Ubuntu 14.04 64-bit (a.k.a *target*)
 * **sudo** (*root*) privileges on both *source* and *target* computers
@@ -47,6 +50,8 @@ Thats it!
   * Downloaded scripts should allready have executable file mode. 
   If not, try to run `sudo chmod +x *.sh` in the script directory (on *source* and *target* computers).
   * Make sure you are running the scripts using `sudo`
+* Unable to install Docker on target:
+  * Make sure you have dependecies mentioned above installed on the target.
 * Other problems:
   * Check console outputs, they may give you clue about the problem.
   * Keep in touch, maybe I can help...
