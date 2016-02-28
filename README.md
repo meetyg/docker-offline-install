@@ -47,8 +47,8 @@ Thats it!
   * Downloaded scripts should allready have executable file mode. 
   If not, try to run `sudo chmod +x *.sh` in the script directory (on *source* and *target* computers).
   * Make sure you are running the scripts using `sudo`
- * Other problems:
-   * Check console outputs, they may give you clue about the problem.
-   * Keep in touch, maybe I can help...
+* Other problems:
+  * Check console outputs, they may give you clue about the problem.
+  * Keep in touch, maybe I can help...
 
 
