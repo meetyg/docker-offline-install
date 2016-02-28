@@ -45,6 +45,10 @@ Please check the console output for any warnings/errors that may occur during th
 
 Thats it!
 
+## Security
+These scripts copy Docker repository public key for [apt], so that the Release.gpg signiture file can be varified 
+during the offline install, just like apt-get does when installing online.
+
 ## Troubleshooting
 * Cannot run scripts:
   * Downloaded scripts should allready have executable file mode. 
