@@ -19,7 +19,29 @@ Currently only Ubuntu 14.04 is supported on both *source* (online) and *target* 
 * **sudo** (*root*) privileges on both *source* and *target* computers
 * Some sort of media to copy the included scripts and mirrored repository to the *target*
  
+
 ## Instructions
+***
+**Please Note:** Currently, the scripts are success oriented, no error checking is done. 
+Please check the console output for any warnings/errors that may occur during the process.
+***
+
+### On the source (online) computer:
+1. [Download](https://github.com/meetyg/docker-offline-install/archive/master.zip) the scripts
+2. Extract the zip
+3. cd into the relevant distribution directory of the scripts (currently only Ubuntu14.04)
+   'cd Ubuntu14.04'
+4. Run the download script with sudo: 'sudo docker-download.sh'
+5. If all goes well, there should be gzip file named *docker_mirror.tar.gz* in the directory you ran the script from.
+   Copy this file, **and** at the *docker-install.sh* script to your media (i.e. cdrom, usb etc...)
+
+### On the target (offline) computer:
+1. Copy the *docker_mirror.tar.gz* and the *docker-install.sh* from the media to a writeable directory on the target.
+2. Run the install script with sudo: 'sudo docker-install.sh' (no need to extract the gzip, the script will do it for you).
+3. If all goes well, Docker should be installed now. Test the installation by running: 'docker ps', you should get an empty list of running containers.
+
+Thats it!
+
 
 
 
